@@ -32,8 +32,8 @@ class NewsAdapter(
 
         fun bind(article: Article) {
             binding.tvNewsTitle.text = article.title
-            binding.tvSourceName.text = article.source.name
-            binding.tvPublishedDate.text = article.publishedAt.take(10) // Simple date format
+            binding.chipSource.text = article.source.name
+            binding.tvPublishedDate.text = article.publishedAt.take(10)
 
             Glide.with(binding.ivNewsImage.context)
                 .load(article.image)

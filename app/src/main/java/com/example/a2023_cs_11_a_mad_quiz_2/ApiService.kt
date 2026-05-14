@@ -15,6 +15,15 @@ interface ApiService {
         @Query("apikey") apiKey: String
     ): NewsResponse
 
+    @GET("search")
+    suspend fun searchNews(
+        @Query("q") query: String,
+        @Query("lang") lang: String = "en",
+        @Query("country") country: String? = null,
+        @Query("max") max: Int = 10,
+        @Query("apikey") apiKey: String
+    ): NewsResponse
+
     companion object {
         private const val BASE_URL = "https://gnews.io/api/v4/"
 
@@ -24,6 +33,23 @@ interface ApiService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ApiService::class.java)
+        }
+    }
+}
+
+interface CountryApiService {
+    @GET("all?fields=name,cca2")
+    suspend fun getCountries(): List<Country>
+
+    companion object {
+        private const val BASE_URL = "https://restcountries.com/v3.1/"
+
+        fun create(): CountryApiService {
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(CountryApiService::class.java)
         }
     }
 }
