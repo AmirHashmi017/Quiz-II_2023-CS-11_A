@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Complaint Registration App</string>
+    <string name="register_complaint">Register Complaint</string>
+    <string name="student_name">Student Name</string>
+    <string name="roll_number">Roll Number</string>
+    <string name="complaint_title">Complaint Title</string>
+    <string name="category">Category</string>
+    <string name="priority">Priority</string>
+    <string name="description">Description</string>
+    <string name="submit">Submit Complaint</string>
+    <string name="complaints_list">Complaints</string>
+    <string name="detail">Complaint Details</string>
+    <string name="empty_message">No complaints found.</string>
+
+    <string-array name="categories">
+        <item>IT</item>
+        <item>Library</item>
+        <item>Transport</item>
+        <item>Hostel</item>
+        <item>Accounts</item>
+        <item>Examination</item>
+        <item>Cafeteria</item>
+        <item>Administration</item>
+    </string-array>
+
+    <string-array name="priorities">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Urgent</item>
+    </string-array>
+</resources>
